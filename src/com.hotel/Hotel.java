@@ -1,17 +1,11 @@
 package com.hotel;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by saylik on 03/05/15.
- */
 public class Hotel {
 
     RateDetails rateDetails = new RateDetails();
 
-    private final String name;
-    private final int rating;
+    private String name;
+    private int rating;
 
     public Hotel(String name ,int rating) {
         this.name = name;
@@ -23,6 +17,7 @@ public class Hotel {
     }
 
     public Integer getCostOfHotel(CustomerCategory customerCategory, AllDays days) {
+        System.out.println("=============");
         int cost = 0;
         for (Days day : days) {
             cost = cost + rateDetails.getPriceOfHotel(customerCategory,day);

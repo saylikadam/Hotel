@@ -12,7 +12,7 @@ public class App {
         HotelManager hotelManager = new HotelManager();
         AppInitializer appInitializer = new AppInitializer();
         appInitializer.makeSetUp();
-        String cheapestHotel = hotelManager.getCheapestHotel(categoryOfCustomer,days);
+        String cheapestHotel = appInitializer.getCheapestHotel(categoryOfCustomer,days);
         System.out.println("Hotels:"+cheapestHotel);
     }
 }

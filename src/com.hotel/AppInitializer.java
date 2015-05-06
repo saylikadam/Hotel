@@ -1,5 +1,8 @@
 package com.hotel;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by saylik on 03/05/15.
  */
@@ -69,5 +72,31 @@ public class AppInitializer {
         setRateDetails();
         addRateToHotels();
     }
+
+
+    public String getCheapestHotel(String categoryOfCustomer, String[] inputDays) {
+        CustomerCategory customerCategory = getCategory(categoryOfCustomer);
+        AllDays days = getAllDays(inputDays);
+        return "Hotels:"+hotelManager.calculateCheapestHotel(customerCategory,days);
+    }
+
+    private AllDays getAllDays(String[] inputDays){
+        AllDays days = new AllDays();
+        for (String day : inputDays) {
+            days.addDays(getDay(day));
+        }
+        return days;
+
+    }
+    private Days getDay(String day) {
+        return day.equals("Weekday")?Days.Weekday:Days.Weekend;
+    }
+
+    private CustomerCategory getCategory(String categoryOfCustomer) {
+        return categoryOfCustomer.equals("Regular")? CustomerCategory.Regular:CustomerCategory.Reward;
+    }
+
+
+
 
 }

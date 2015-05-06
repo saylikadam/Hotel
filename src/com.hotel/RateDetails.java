@@ -23,10 +23,11 @@ public class RateDetails {
     }
 
     private Rate getPriceByDayAndCategory(CustomerCategory customerCategory, Days days) {
-        Rate rate = new Rate(customerCategory,0,days);
-        for(Rate eachRate :allRates){
-            if(eachRate.equals(rate)){
-                return eachRate;
+        Rate newRate = new Rate(customerCategory,0,days);
+        for(Rate rate :allRates){
+            System.out.println(allRates.iterator());
+            if(rate.equals(newRate)){
+                return rate;
             }
         }
         return null;
