@@ -6,6 +6,10 @@ import java.util.List;
 public class RateDetails {
     List<Rate> allRates = new ArrayList<Rate>();
 
+    public RateDetails() {
+
+    }
+
     public boolean add(Rate rate) {
         if(allRates.contains(rate))
             return false;
@@ -25,7 +29,6 @@ public class RateDetails {
     private Rate getPriceByDayAndCategory(CustomerCategory customerCategory, Days days) {
         Rate newRate = new Rate(customerCategory,0,days);
         for(Rate rate :allRates){
-            System.out.println(allRates.iterator());
             if(rate.equals(newRate)){
                 return rate;
             }

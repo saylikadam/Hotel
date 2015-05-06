@@ -21,8 +21,9 @@ public class HotelManager {
 
     public String calculateCheapestHotel(CustomerCategory customerCategory, AllDays days) {
         Map<Hotel,Integer> rateOfAllHotels = calculateRateForAllHotels(customerCategory,days);
-//        for (Hotel hotel : rateOfAllHotels.keySet()) {
-//        }
+        for (Hotel hotel : rateOfAllHotels.keySet()) {
+
+        }
         return null;
     }
     //
@@ -31,7 +32,6 @@ public class HotelManager {
         for (Hotel hotel : hotels) {
             rateOfAllHotels.put(hotel,hotel.getCostOfHotel(customerCategory,days));
         }
-        System.out.println("rateOfHiotels"+rateOfAllHotels);
         return rateOfAllHotels;
     }
 }

@@ -5,6 +5,7 @@ import com.hotel.RateDetails;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
@@ -33,20 +34,20 @@ public class RateDetailsTest {
         assertTrue(rateDetails.add(rate));
     }
 
-//    @Test
-//    public void addShouldReturnFalseIfSameRateIsAddedTwoTimesIntoAllRates(){
-//        Rate rate1 = new Rate(regular,110,weekday);
-//        Rate rate2 = new Rate(regular,20,weekday);
-//        assertTrue(rateDetails.add(rate1));
-//        assertFalse(rateDetails.add(rate2));
-//    }
+    @Test
+    public void addShouldReturnFalseIfSameRateIsAddedTwoTimesIntoAllRates(){
+        Rate rate1 = new Rate(regular,110,weekday);
+        Rate rate2 = new Rate(regular,20,weekday);
+        assertTrue(rateDetails.add(rate1));
+        assertFalse(rateDetails.add(rate2));
+    }
 
     @Test
     public void getPriceOfHotelShouldReturnThePriceOfHotelForRegularCustomer(){
         Rate rate = new Rate(regular,110,weekday);
         rateDetails.add(rate);
         int price = rateDetails.getPriceOfHotel(regular,weekday);
-        System.out.println(price);
+        assertEquals(price,110);
     }
 
 }

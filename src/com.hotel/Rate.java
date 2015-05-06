@@ -26,18 +26,15 @@ public class Rate {
 
         Rate rate = (Rate) o;
 
-        if (price != rate.price) return false;
         if (customerCategory != rate.customerCategory) return false;
-        if (day != rate.day) return false;
-
-        return true;
+        return day == rate.day;
     }
 
     @Override
     public int hashCode() {
-        int result = customerCategory != null ? customerCategory.hashCode() : 0;
+        int result = customerCategory.hashCode();
+        result = 31 * result + day.hashCode();
         result = 31 * result + price;
-        result = 31 * result + (day != null ? day.hashCode() : 0);
         return result;
     }
 }
