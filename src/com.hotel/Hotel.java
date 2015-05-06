@@ -18,8 +18,8 @@ public class Hotel {
         this.rating = rating;
     }
 
-    public void addRate(Rate rate) {
-        rateDetails.add(rate);
+    public boolean addRate(Rate rate) {
+        return rateDetails.add(rate);
     }
 
     public Integer getCostOfHotel(CustomerCategory customerCategory, AllDays days) {

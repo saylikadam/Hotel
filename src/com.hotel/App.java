@@ -13,6 +13,6 @@ public class App {
         AppInitializer appInitializer = new AppInitializer();
         appInitializer.makeSetUp();
         String cheapestHotel = hotelManager.getCheapestHotel(categoryOfCustomer,days);
-        System.out.println(cheapestHotel);
+        System.out.println("Hotels:"+cheapestHotel);
     }
 }

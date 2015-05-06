@@ -5,9 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by saylik on 03/05/15.
- */
 public class HotelManager {
     private List<Hotel> hotels = new ArrayList<Hotel>();
 
@@ -19,6 +16,7 @@ public class HotelManager {
     }
 
     public String getCheapestHotel(String categoryOfCustomer, String[] inputDays) {
+        System.out.println("in get chip"+hotels.toString());
         CustomerCategory customerCategory = getCategory(categoryOfCustomer);
         AllDays days = getAllDays(inputDays);
         return calculateCheapestHotel(customerCategory,days);
@@ -46,9 +44,10 @@ public class HotelManager {
 //        }
         return null;
     }
-
+//
     private Map<Hotel, Integer> calculateRateForAllHotels(CustomerCategory customerCategory, AllDays days) {
         Map<Hotel,Integer> rateOfAllHotels = new HashMap<Hotel,Integer>();
+        System.out.println("========"+hotels.toString());
         for (Hotel hotel : hotels) {
             System.out.println("======"+hotel);
             rateOfAllHotels.put(hotel,hotel.getCostOfHotel(customerCategory,days));

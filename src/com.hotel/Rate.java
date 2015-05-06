@@ -16,7 +16,6 @@ public class Rate {
     }
 
     public int getPrice() {
-        System.out.println("---------");
         return price;
     }
 }
